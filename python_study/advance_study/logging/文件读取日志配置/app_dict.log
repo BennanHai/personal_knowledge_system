@@ -1,0 +1,2 @@
+2025-03-02 23:31:55,615 - my_module - DEBUG - This is a debug message.
+2025-03-02 23:31:55,616 - my_module - INFO - This is an info message.

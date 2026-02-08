@@ -1,0 +1,3 @@
+{"asctime": "2025-03-02 23:26:18,093", "name": "my_module", "levelname": "INFO", "message": "This is an info message.", "timestamp": "2025-03-02T15:26:18.093101+00:00"}
+{"asctime": "2025-03-02 23:26:32,196", "name": "my_module", "levelname": "INFO", "message": "This is an info message."}
+{"asctime": "2025-03-02 23:27:53,661", "name": "my_module", "levelname": "INFO", "message": "This is an info message."}

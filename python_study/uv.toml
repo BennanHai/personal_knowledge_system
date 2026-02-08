@@ -1,0 +1,21 @@
+# uv 配置文件
+# 主镜像源 - 使用清华镜像提升下载速度
+index-url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+
+# 备用镜像源
+extra-index-url = [
+    "https://mirrors.aliyun.com/pypi/simple/",
+    "https://pypi.douban.com/simple/"
+]
+
+# 依赖解析策略 - 选择最高版本
+resolution = "highest"
+
+# 不允许预发布版本
+prerelease = "disallow"
+
+# 并发下载数
+concurrent-downloads = 10
+
+# 缓存目录
+cache-dir = "~/.uv-cache"

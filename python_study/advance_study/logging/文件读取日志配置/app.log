@@ -1,0 +1,4 @@
+{"asctime": "2025-03-02 22:59:33,584", "name": "my_module.sub_module", "levelname": "INFO", "message": "This is an info message."}
+{"asctime": "2025-03-02 22:59:33,585", "name": "my_module.sub_module", "levelname": "WARNING", "message": "This is a warning message."}
+{"asctime": "2025-03-02 22:59:33,585", "name": "my_module.sub_module", "levelname": "ERROR", "message": "This is an error message."}
+{"asctime": "2025-03-02 22:59:33,585", "name": "my_module.sub_module", "levelname": "ERROR", "message": "invalid literal for int() with base 10: 'lsp'", "exc_info": "Traceback (most recent call last):\n  File \"D:\\Program Files\\python\\my_projects\\python\u5165\u95e8\u5230\u5b9e\u8df5\u5b66\u4e60\\my_logging\\\u6587\u4ef6\u8bfb\u53d6\u65e5\u5fd7\u914d\u7f6e\\read_json.py\", line 26, in <module>\n    int(a)\n    ~~~^^^\nValueError: invalid literal for int() with base 10: 'lsp'"}
