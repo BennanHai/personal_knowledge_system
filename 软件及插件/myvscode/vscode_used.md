@@ -82,5 +82,7 @@ Settings → Editor → Color Scheme → Better Comments → 调整各标记颜�
         return fibonacci(n-1) + fibonacci(n-2)
 
 
-## 2. 
+## 2. BasedPyright
+BasedPyright 是一个基于 Pyright 的 Python 静态类型检查器插件，它可以在 VSCode 中提供实时的类型检查和错误提示。
 
+## 3. 
