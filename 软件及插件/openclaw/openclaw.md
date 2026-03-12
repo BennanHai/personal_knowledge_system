@@ -21,6 +21,20 @@ npm install -g openclaw@latest
 # 安装 OpenClaw 守护进程， 引导相关配置
 openclaw onboard --install-daemon
 ```
+## windows 安装
+- 安装 Node.js 和 npm
+  - 具体查看步骤：[nodejs安装步骤--windows](../nvm_and_node/nodejs.md#nodejs安装步骤--windows)
+- 安装 OpenClaw 守护进程， 引导相关配置
+```bash
+# 下载
+npm install -g openclaw@latest
+
+# 安装 OpenClaw 守护进程， 引导相关配置
+openclaw onboard --install-daemon
+
+# 下载qq\feishu 插件
+
+```
 
 ## 接入机器人
 ### qq
@@ -60,29 +74,9 @@ openclaw --list
 # 运行交互式控制台
 openclaw console
 
-# 检查系统状态
-openclaw doctor
-```
-
-### 配置文件
-OpenClaw 的配置文件通常位于 `~/.openclaw/config.yaml` 或项目目录下的 `openclaw.config.yaml`。
-
-配置文件示例：
-```yaml
-# openclaw.config.yaml
-version: "1.0"
-robot:
-  type: "qq"  # 机器人类型：qq, wechat, telegram 等
-  token: "your-bot-token-here"  # 机器人令牌
-  admin_ids:  # 管理员ID列表
-    - "123456789"
-    - "987654321"
-plugins:
-  enabled: true
-  directory: "./plugins"  # 插件目录
-logging:
-  level: "info"  # 日志级别：debug, info, warn, error
-  file: "./logs/openclaw.log"  # 日志文件路径
+openclaw doctor         # check for config issues
+openclaw status         # gateway status
+openclaw dashboard      # open the browser UI
 ```
 
 ### 初始化项目
@@ -107,12 +101,27 @@ OpenClaw 支持插件系统，可以扩展功能。
 openclaw plugin install plugin-name
 
 # 列出已安装的插件
-openclaw plugin list
+openclaw plugins list
 
 # 卸载插件
-openclaw plugin uninstall plugin-name
+openclaw plugins uninstall plugin-name
 
 # 启用/禁用插件
-openclaw plugin enable plugin-name
-openclaw plugin disable plugin-name
+openclaw plugins enable plugin-name
+openclaw plugins disable plugin-name
+```
+
+### skills 管理
+- [最适合新手先装的 20 个 OpenClaw Skills 来了！](https://juejin.cn/post/7614066405495799808)
+
+```bash
+# 列出已安装的技能
+openclaw skills list
+
+# 卸载技能
+openclaw skills uninstall skill-name
+
+# 启用/禁用技能
+openclaw skills enable skill-name
+openclaw skills disable skill-name
 ```

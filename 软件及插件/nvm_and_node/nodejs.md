@@ -9,7 +9,7 @@ Node.js 是一个开源的跨平台 JavaScript 运行环境。它是几乎任何
 nvm 是一个 Node.js 版本管理工具。它可以让你在同一台机器上安装和使用多个版本的 Node.js。
 nvm 可以从官方仓库下载安装脚本：[nvm 安装脚本](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### nvm通用安装步骤
+### nvm安装步骤--linux
 发现设置镜像源之后下载nvm还是超时； 因此下载 tar.gz 包手动安装。
 
 1. 下载 tar.gz 包 到本地再上传服务器
@@ -123,3 +123,148 @@ npm install
 npm publish
 ```
 
+### 安装 nvm-windows
+
+nvm-windows 是 Windows 系统上的 Node.js 版本管理工具，使用它可以更方便地管理多个 Node.js 版本。
+
+1. **下载 nvm-windows 安装包**
+   - 访问 [nvm-windows GitHub 仓库](https://github.com/coreybutler/nvm-windows/releases)
+   - 下载最新的 `nvm-setup.exe` 安装文件
+
+2. **运行安装程序**
+   - 双击 `nvm-setup.exe` 文件
+   - 按照安装向导的提示完成安装
+   - 可以选择默认安装路径，也可以自定义路径
+
+3. **验证安装结果**
+```bash
+nvm version
+```
+
+4. **配置国内镜像源（可选但推荐）**
+   - 编辑 nvm 安装目录下的 `settings.txt` 文件
+   - 添加以下内容：
+```
+node_mirror: https://npmmirror.com/mirrors/node/
+npm_mirror: https://npmmirror.com/mirrors/npm/
+```
+
+5. **使用 nvm-windows 安装 Node.js**
+```bash
+# 安装最新版本
+nvm install latest
+
+# 安装 LTS 版本
+nvm install lts
+
+# 安装特定版本
+nvm install 24.0.0
+```
+
+6. **切换 Node.js 版本**
+```bash
+nvm use 24.0.0
+```
+### 卸载 nvm-windows
+
+如果需要卸载 nvm-windows，可以使用以下命令：
+```bash
+# 卸载 nvm-windows
+nvm uninstall
+```
+
+### 升级nodejs
+
+在 Windows 上升级 Node.js 有两种主要方法：使用 nvm-windows 或直接下载安装包升级。
+
+#### 方法一：使用 nvm-windows 升级（推荐）
+
+1. **查看当前安装的 Node.js 版本**
+```bash
+nvm list
+```
+
+2. **安装最新版本的 Node.js**
+```bash
+nvm install latest
+```
+
+3. **安装特定版本的 Node.js**
+```bash
+# 安装特定版本，例如 v24.0.0
+nvm install 24.0.0
+```
+
+4. **切换到新安装的版本**
+```bash
+nvm use 24.0.0
+```
+
+5. **验证升级结果**
+```bash
+node -v
+npm -v
+```
+
+#### 方法二：直接下载安装包升级
+
+1. **访问 Node.js 官方网站**
+   - 打开 [Node.js 官方网站](https://nodejs.org/zh-cn/)
+   - 下载最新的 Windows 安装包（LTS 版本推荐）
+
+2. **运行安装程序**
+   - 双击下载的 `.msi` 文件
+   - 按照安装向导的提示完成安装
+   - 安装程序会自动覆盖旧版本
+
+3. **验证升级结果**
+```bash
+node -v
+npm -v
+```
+
+#### 升级 npm
+
+无论使用哪种方法升级 Node.js，都可以单独升级 npm 到最新版本：
+```bash
+npm install -g npm@latest
+```
+
+#### 注意事项
+
+- 使用 nvm-windows 可以同时管理多个 Node.js 版本，便于在不同项目间切换
+- 直接安装包升级会覆盖当前版本，适用于只需要一个版本的用户
+- 升级前建议备份重要的项目依赖和配置
+- 某些旧项目可能依赖特定版本的 Node.js，升级前请确认兼容性
+
+### 卸载 nvm-windows
+
+当你不再需要 nvm-windows 时，可以按照以下步骤卸载它：
+
+1. **关闭所有命令提示符窗口**
+   - 确保没有正在使用 nvm 或 Node.js 的终端窗口
+
+2. **卸载 nvm-windows**
+   - 打开 "控制面板" → "程序和功能"
+   - 找到 "nvm-windows" 并点击 "卸载"
+   - 按照卸载向导的提示完成卸载过程
+
+3. **删除 nvm 安装目录**
+   - 手动删除 nvm 的安装目录（例如 "C:\nvm" 或 "D:\nvm"）
+   - 确保删除所有相关文件和文件夹
+
+4. **删除环境变量**
+   - 打开 "系统属性" → "高级" → "环境变量"
+   - 删除系统变量中的 `NVM_HOME` 和 `NVM_SYMLINK`
+   - 从系统 PATH 中删除 `%NVM_HOME%` 和 `%NVM_SYMLINK%` 相关条目
+
+5. **删除符号链接**
+   - 删除 `NVM_SYMLINK` 指向的目录（通常为 "C:\Program Files\nodejs"）
+   - 注意：如果该目录是实际的 Node.js 安装（非符号链接），请谨慎操作
+
+6. **验证卸载**
+   - 打开新的命令提示符窗口
+   - 执行 `nvm version` 命令
+   - 如果显示 "nvm 不是内部或外部命令"，则卸载成功
+
+### 故障排除
