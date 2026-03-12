@@ -1,0 +1,27 @@
+# uv.toml configuration for Chinese users
+
+[pip]
+# Use Chinese mirror sources for faster downloads
+index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+extra-index-url = [
+    "https://mirrors.aliyun.com/pypi/simple/",
+    "https://pypi.douban.com/simple/"
+]
+
+[cache]
+# Cache directory (optional, uncomment to customize)
+# dir = "~/.cache/uv"
+
+[build]
+# Build backend settings
+backend = "setuptools"
+
+[virtualenvs]
+# Virtual environment settings
+create = true
+in-project = true
+prompt = "{project_name}"
+
+[python]
+# Python version preferences
+# default = "3.11"
